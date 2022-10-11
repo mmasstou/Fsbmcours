@@ -55,8 +55,12 @@ DATABASES = {
 5. install the requirements file using `pip3 install -r requirements.txt`
 
 6. To migrate the database open terminal in project directory and type
-    1.```python manage.py makemigrations```
-    2. ```python manage.py migrate```
+```
+    python manage.py makemigrations
+```
+```
+python manage.py migrate
+```
 7. then , simply run the server using this command :
 ```
 python manage.py runserver

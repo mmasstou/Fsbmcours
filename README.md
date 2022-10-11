@@ -8,16 +8,16 @@ Fsbmcours is a Bibliothèque on Ligne , that give a archives (course and traveux
 
 <h2> Prerequisites</h2>
 <code>
-asgiref==3.4.1
-cffi==1.15.0
-cryptography==35.0.0
-Django==3.2.8
-django-cors-headers==3.8.0
-Pillow==8.4.0
-pycparser==2.20
-PyMySQL==1.0.2
-pytz==2021.3
-sqlparse==0.4.2
-whitenoise==5.3.0
+asgiref==3.4.1 <br>
+cffi==1.15.0 <br>
+cryptography==35.0.0 <br>
+Django==3.2.8<br>
+django-cors-headers==3.8.0<br>
+Pillow==8.4.0<br>
+pycparser==2.20<br>
+PyMySQL==1.0.2<br>
+pytz==2021.3<br>
+sqlparse==0.4.2<br>
+whitenoise==5.3.0<br>
 
 </code>

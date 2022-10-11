@@ -6,18 +6,58 @@ Fsbmcours is a Bibliothèque on Ligne , that give a archives (course and traveux
 <p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</p>
 
 
-<h2> Prerequisites</h2>
-<code>
-asgiref==3.4.1 <br>
-cffi==1.15.0 <br>
-cryptography==35.0.0 <br>
-Django==3.2.8<br>
-django-cors-headers==3.8.0<br>
-Pillow==8.4.0<br>
-pycparser==2.20<br>
-PyMySQL==1.0.2<br>
-pytz==2021.3<br>
-sqlparse==0.4.2<br>
-whitenoise==5.3.0<br>
+## Prerequisites
+* asgiref==3.4.1 
+* cffi==1.15.0 
+* cryptography==35.0.0 
+* Django==3.2.8
+* django-cors-headers==3.8.0
+* Pillow==8.4.0
+* pycparser==2.20
+* PyMySQL==1.0.2
+* pytz==2021.3
+* sqlparse==0.4.2
+* whitenoise==5.3.0
+<br>
+## Setup Commands
+<pre>open terminal and type</pre>
 
-</code>
+1. clone this project 
+```
+$ git clone https://github.com/mmasstou/Fsbmcours.git
+```
+<h4>or simply download using the url below</h4>
+<code>https://github.com/mmasstou/Fsbmcours.git</code><br>
+
+
+ For database i use Mysql </h2>
+1. After install mysql, Create Databasein mysql shell using these commands
+    1. `CREATE DATABASE db_fsbmcours ;`
+    2. `CREATE USER fsbmcours_user with PASSWORD 'password' ;`
+    3. `GRANT ALL PRIVILEGES ON DATABASE db_fsbmcours TO fsbmcours_user ;`
+
+2. and fill **database name** , **database password** and **user** in `settings.py` like
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_fsbmcours',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'USER': 'fsbmcours_user',
+        'PASSWORD': 'password',
+    }
+}
+```
+
+3.  Create Environment using :  `python3 -m venv .env`
+4. activate this **.env** using `source .env/bin/activate` 
+5. install the requirements file using `pip3 install -r requirements.txt`
+
+6. To migrate the database open terminal in project directory and type
+    1.`python manage.py makemigrations`
+    2. `python manage.py migrate`
+7. then , simply run the server using this command :
+```
+python manage.py runserver
+```

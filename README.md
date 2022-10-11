@@ -65,6 +65,5 @@ python manage.py runserver
 ```
 ## demo image
 <div align="center">
-    <ing
-    src="https://github.com/mmasstou/Fsbmcours/blob/main/demo_img/home_page.png" width="100%">
+    <img src="https://github.com/mmasstou/Fsbmcours/blob/main/demo_img/home_page.png" width="100%">
 </div>

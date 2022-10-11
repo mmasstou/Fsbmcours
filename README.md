@@ -19,6 +19,8 @@ Fsbmcours is a Bibliothèque on Ligne , that give a archives (course and traveux
 * sqlparse==0.4.2
 * whitenoise==5.3.0
 <br>
+
+
 ## Setup Commands
 <pre>open terminal and type</pre>
 
@@ -64,6 +66,11 @@ DATABASES = {
 python manage.py runserver
 ```
 ## demo image
+# home page
 <div align="center">
     <img src="https://github.com/mmasstou/Fsbmcours/blob/main/demo_img/home_page.png" width="100%">
+</div>
+
+<div align="center">
+    <img src="https://github.com/mmasstou/Fsbmcours/blob/main/demo_img/home_page-dark.png" width="100%">
 </div>

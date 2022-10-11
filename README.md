@@ -57,9 +57,7 @@ DATABASES = {
 6. To migrate the database open terminal in project directory and type
 ```
     python manage.py makemigrations
-```
-```
-python manage.py migrate
+    python manage.py migrate
 ```
 7. then , simply run the server using this command :
 ```

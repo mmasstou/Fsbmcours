@@ -1,0 +1,11 @@
+.env/
+*.log
+*.pot
+*.pyc
+pycache/
+migrations
+db.sqlite3
+media
+static_root
+.vscode
+.DS_Store

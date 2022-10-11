@@ -1,0 +1,55 @@
+{% include "base.html" %}
+
+{% block content %}
+<div class="body__section">
+            
+    <div class="login__section">
+        <div class="login__box">
+            <div class="login__box-header">
+                <a href="">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>back</span>
+                </a>
+            </div>
+            {% comment %} <div class="login__box-error_meaasge">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <h3>Username Or Email Incorect</h3>
+            </div> {% endcomment %}
+            <!-- <div class="login__box-login__w_google">
+                <a href="">
+                    <img src="../assets/images/google.png" alt="">
+                    <h3>Continue with Google</h3>
+                </a>
+            </div> -->
+            {% comment %} <span>Or</span> {% endcomment %}
+            <div class="login__box-form">
+                <form action="." method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="input__field">
+                        <label for="">first Name</label>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="input__field">
+                        <label for="">last Name</label>
+                        {{ form.last_name }}
+                    </div>
+                    <div class="input__field">
+                        <label for="">email</label>
+                        {{ form.email }}
+                    </div>
+                    <div class="input__field">
+                        <label for="">password</label>
+                        {{ form.password1 }}
+                    </div>
+                    <div class="input__field">
+                        <label for="">password</label>
+                        {{ form.password2 }}
+                    </div>
+                    <button type="submit">Resgister</button>
+                </form>
+            </div>
+            <h3>Have Account ? <a href="{% url 'account:login' %}">Login</a></h3>
+        </div>
+    </div>
+</div>
+{% endblock content %}

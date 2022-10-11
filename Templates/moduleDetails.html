@@ -1,0 +1,29 @@
+{% include "base.html" %} {% load static %} 
+{% block content %}
+<div class="body__section">
+    <div class="courses__header__ container">
+        <img src="{% static 'img/folder.svg' %}" alt="">
+        <div class="courses__header_info">
+            <h3>{{ Modules.name }}</h3>
+            <span>09 files</span>
+        </div>
+    </div>
+    <div class="courses__pdfs container">
+        {% for Course in Courses %}
+        <div class="cart__box__">
+            <img class="cart__box_image" src="{% static 'img/PDF_file_icon.png' %}" alt="">
+            <div class="cart__box_info">
+                <div class="cart__box_info_header">
+                    <img src="{% static 'img/smp.png' %}" alt="">
+                    <h2>{{ Course.name }}</h2>
+                </div>
+                <a href="" class="cart__box_info_footer">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Telecharge</span>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

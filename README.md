@@ -72,7 +72,31 @@ python manage.py runserver
 </div>
 <br>
 <br>
-<br>
 <div align="center">
     <img src="https://github.com/mmasstou/Fsbmcours/blob/main/demo_img/home_page-dark.png" width="100%">
+</div>
+<br>
+<br>
+
+# login and Register page:
+<div align="center">
+    <img src="https://github.com/mmasstou/Fsbmcours/blob/main/demo_img/login-dark.png" width="100%">
+</div>
+<br>
+<br>
+<div align="center">
+    <img src="https://github.com/mmasstou/Fsbmcours/blob/main/demo_img/login.png" width="100%">
+</div>
+<br>
+<br>
+
+# module page
+
+<div align="center">
+    <img src="https://github.com/mmasstou/Fsbmcours/blob/main/demo_img/module-page-dark.png" width="100%">
+</div>
+<br>
+<br>
+<div align="center">
+    <img src="https://github.com/mmasstou/Fsbmcours/blob/main/demo_img/module-page.png" width="100%">
 </div>

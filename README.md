@@ -63,3 +63,8 @@ DATABASES = {
 ```
 python manage.py runserver
 ```
+## demo image
+<div align="center">
+    <ing
+    src="" width="100%">
+</div>

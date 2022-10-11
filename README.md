@@ -89,6 +89,16 @@ python manage.py runserver
 </div>
 <br>
 <br>
+<div align="center">
+    <img src="https://github.com/mmasstou/Fsbmcours/blob/main/demo_img/register-page-dark.png" width="100%">
+</div>
+<br>
+<br>
+<div align="center">
+    <img src="https://github.com/mmasstou/Fsbmcours/blob/main/demo_img/register-page.png" width="100%">
+</div>
+<br>
+<br>
 
 # module page
 

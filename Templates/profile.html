@@ -1,0 +1,56 @@
+{% include "base.html" %}
+
+{% block content %}
+<div class="body__section container">
+    <div class="profile__section">
+        <aside>
+            <h2>User Profile</h2>
+            <ul>
+                <li>
+                    <a href="" class="active">
+                        <i class="fa-solid fa-user"></i>
+                        User Info
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <div class="profile__content">
+            <div class="profile__info"> 
+                <div class="user__img">
+                    <img src="{{request.user.imageURL}}" alt="">
+                    <!-- <i class="fa-solid fa-user-pen"></i> -->
+                </div>
+                <div class="user__info">
+                    <h1>{{request.user.first_name}} {{request.user.last_name}}</h1>
+                    <h4>Licence Fondamentales SPM</h4>
+                    <span>{{request.user.email}}</span>
+                    <span>Universty Hassan II De Casablanca</span>
+
+                </div>
+            </div>
+            <p>
+                <strong>About : </strong><br>
+                {{request.user.bio}}
+            </p>
+            <!-- <div class="profile__form">
+                <form action="">
+                    <div class="input__field">
+                        <label for="">Username</label>
+                        <input type="text" name="username" id="username">
+                    </div>
+                    <div class="input__field">
+                        <label for="">Email</label>
+                        <input type="email" name="password" id="password">
+                    </div>
+                    <button type="submit">Save Changes</button>
+                </form> -->
+            </div>
+        </div>
+    </div>
+{% endblock content %}

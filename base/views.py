@@ -22,6 +22,8 @@ def indexPage(request):
     #     form = MyForm(request.POST)
     #     if form.is_valid():
     #         form.save()
+    print("theme : " + request.user.theme)
+    them = "dark_active" if request.user.theme == "dark" else ""
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     try:
         print("q : " + q)
@@ -36,9 +38,11 @@ def indexPage(request):
     Departement_qs = Departement.objects.all()
     semmester_ds = Semester.objects.all()
     context = {
+        "them":them,
         "modules": module_qs,
         "course_size":course_size,
         "Departements": Departement_qs,
         "semmesters":semmester_ds
     }
     return render(request, 'index.html', context)
+

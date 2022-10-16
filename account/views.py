@@ -76,7 +76,7 @@ def registerPage(request):
             user = form.save(commit=False)
             fname = user.first_name.lower()
             lname = user.last_name.lower()
-            user.username = fname[:1] + lname[:7]
+            user.username = fname[:1] + lname[:7] + "_fs"
             user.save()
             login(request, user)
 
@@ -143,3 +143,8 @@ def activate(request,uidb64,token):
         return redirect('acount:login')
     else:
         return render(request,'register.html')
+
+
+def User_profile(request,username):
+    context = {}
+    return render(request, "profile.html", context)

@@ -37,6 +37,7 @@ darkModeBtn.addEventListener("click", function(){
   darkModeBtn.classList.toggle('fa-moon')
   darkModeBtn.classList.toggle('fa-sun')
   Body.classList.toggle('dark_active')
+  
   // Body.classList.replace('dark_active', 'dark_deactive')
 });
 

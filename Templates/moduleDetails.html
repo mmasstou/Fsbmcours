@@ -1,26 +1,40 @@
 {% include "base.html" %} {% load static %} 
+{% block title %} {{ Modules.name | title}} {% endblock title %}
+
 {% block content %}
 <div class="body__section">
     <div class="courses__header__ container">
         <img src="{% static 'img/folder.svg' %}" alt="">
         <div class="courses__header_info">
-            <h3>{{ Modules.name }}</h3>
-            <span>09 files</span>
+            <h1>{{ Modules.name }}</h1>
+            <span>{{ course_size }} files</span>
+
         </div>
+        <a class="add_btn" href="{% url 'course:add-course' Modules.slug %}">
+            <i class="fa-solid fa-plus"></i>
+            Add Course
+        </a>
     </div>
     <div class="courses__pdfs container">
         {% for Course in Courses %}
         <div class="cart__box__">
             <img class="cart__box_image" src="{% static 'img/PDF_file_icon.png' %}" alt="">
             <div class="cart__box_info">
-                <div class="cart__box_info_header">
-                    <img src="{% static 'img/smp.png' %}" alt="">
-                    <h2>{{ Course.name }}</h2>
-                </div>
-                <a href="" class="cart__box_info_footer">
+                <a class="cart__box_info_header" target="_blank" href="{{ Course.pdfURL }}">
                     <i class="fa-solid fa-download"></i>
                     <span>Telecharge</span>
                 </a>
+                <h2 class="course_title" >{{ Course.name }}</h2>
+                <div class="delete_edit_btn">
+                    <a class="Delete" href="{% url 'course:delete-course'  Modules.slug Course.slug %}">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Delete</span>
+                    </a>
+                    <a class="Edit" href="{% url 'course:edit-course'  Modules.slug Course.slug %}">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Edit</span>
+                    </a>
+                </div>
             </div>
         </div>
         {% endfor %}

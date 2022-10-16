@@ -1,0 +1,39 @@
+{% include "base.html" %} {% load static %}
+
+{% block content %}
+
+<div class="body__section container">
+    <div class="courses__header__ container">
+        <img src="{% static 'img/folder.svg' %}" alt="">
+        <div class="courses__header_info">
+            <h1>{{ Modules.name }}</h1>
+            <span>09 files</span>
+        </div>
+    </div>
+    <div class="profile__section">
+        <aside></aside>
+        <div class="profile__content">
+
+            <div class="profile__form">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}    
+                    {{form.as_p}}
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}
+{% block dashboard_script %}
+<script>
+    let form_fields = document.getElementsByTagName('input')
+    form_fields[2].placeholder = "Name .. ";
+    
+    for (let field in form_fields){
+    console.log(field)
+    form_fields[field].classList += 'form_section_input'
+    }
+</script>{% endblock dashboard_script %}

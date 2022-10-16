@@ -1,4 +1,4 @@
-{% include "base.html" %} {% load static %} {% block content %}
+{% include "base.html" %}{% load static %} {% block Tilie_block %} Home |Bibliothèque on Ligne {% endblock Tilie_block %}  {% block content %}
 <div class="body__section">
   <div class="body__section_info">
     <h1>bibliothèque on ligne</h1>
@@ -13,35 +13,13 @@
   </div>
   <div class="courses__section_header max__width">
     <h3>{{course_size}} courses</h3>
-    {% comment %}
-    <form action="" method="post">
-      <!-- <label for="">Filter by</label> -->
-      <div class="filterd_bay">
-        <select name="" id="">
-          <option>select ..</option>
-          {% for Departement in Departements%}
-          <option value="{{ Departement.slug }}">{{ Departement.name }}</option>
-          {% endfor %}
-        </select>
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-
-      <!-- <label for="">Sorted by</label> -->
-      <div class="sorted_by">
-        <select name="" id="">
-          <option>select ..</option>
-          {% for semmester in semmesters %}
-          <option value="{{ semmester.slug }}">{{ semmester.name }}</option>
-          {% endfor %}
-        </select>
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-    </form>
-    {% endcomment %}
   </div>
   <div class="courses__section">
     {% if modules %} {% for cours in modules %}
-    <a href="{% url 'course:module-details' cours.slug  %}" class="courses__section_box">
+    <a
+      href="{% url 'course:module-details' cours.slug  %}"
+      class="courses__section_box"
+    >
       <img
         src="{% if cours.semester.departement.name == 'Physique' %}{% static 'img/smp.png' %}{% else %}{% static 'img/smc.png' %}{% endif %}"
         alt=""
@@ -53,16 +31,7 @@
     </a>
     {% empty %}
     <h3>No data</h3>
-    {% endfor %} 
-    {% endif %} {% comment%}
-    <a href="./pages/courses_page.html" class="courses__section_box">
-      <img src="./assets//images/smp.png" alt="" />
-      <div class="courses__section_box_body">
-        <h3>Mecanique de Point</h3>
-        <h5>Semester 5</h5>
-      </div>
-    </a>
-    {% endcomment %}
+    {% endfor %} {% endif %}
   </div>
 </div>
 {% endblock content %}

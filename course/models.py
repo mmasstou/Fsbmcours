@@ -16,10 +16,10 @@ class setteings(models.Model):
         
 def getFileName(request, filename):
 	
-	origiFilename = filename
+	# origiFilename = filename
 	timeNow = datetime.datetime.now().strftime('%Y%m%d%H:%M:%S')
 	timeNow_dir = datetime.datetime.now().strftime('%Y%m_%d')
-	filename = "%s%s" % (timeNow, origiFilename)
+	# filename = "%s%s" % (timeNow, origiFilename)
 	upload_to = 'Course_Pdfs/'+ timeNow_dir + '/'
 	return os.path.join(upload_to, filename)
 
@@ -96,7 +96,21 @@ class Course(models.Model):
     count = models.IntegerField(default=0)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(null=True, blank= True)
 
+    def save(self, *args, **kwargs):
+
+        if self.slug == None:
+            slug = slugify(self.name)
+            self.slug = slug
+        super().save(*args, **kwargs)
+    @property
+    def pdfURL(self):
+        try:
+            url = self.course_file.url
+        except:
+            url = ''
+        return url
     class Meta:
         ordering = ['-created']
 

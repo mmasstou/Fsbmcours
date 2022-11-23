@@ -13,6 +13,8 @@ from django.urls import reverse
 from course.models import *
 from django.contrib.auth import forms
 
+from account.models import WebConfigirations
+@csrf_exempt
 def indexPage(request):
     # if not request.user.is_authenticated:
     #     return redirect('account:login')
@@ -22,23 +24,32 @@ def indexPage(request):
     #     form = MyForm(request.POST)
     #     if form.is_valid():
     #         form.save()
-    print("theme : " + request.user.theme)
-    them = "dark_active" if request.user.theme == "dark" else ""
+    them = ""
     q = request.GET.get('q') if request.GET.get('q') != None else ''
+    if request.user.is_authenticated:
+        WebConfig_qs, created = WebConfigirations.objects.get_or_create(
+            useradmin=request.user)
+    else:
+        WebConfig_qs, created = WebConfigirations.objects.get_or_create(
+            name="defualt_user")
+        print("New config is created >>>>>>>> ")
+    module_qs = Module.objects.filter(
+        Q(name__icontains = q)
+        )
+    course_size = module_qs.count()
     try:
+        print("theme : " + request.user.theme)
+        them = "dark_active" if request.user.theme == "dark" else ""
         print("q : " + q)
-        module_qs = Module.objects.filter(
-            name__icontains = q
-            )
     except:
         product_qs = ""
     course_qs = Course.objects.all()
     # module_qs = Module.objects.all()
-    course_size = module_qs.count()
     Departement_qs = Departement.objects.all()
     semmester_ds = Semester.objects.all()
     context = {
-        "them":them,
+        "WebConfig_qs":WebConfig_qs,
+        # "them":them,
         "modules": module_qs,
         "course_size":course_size,
         "Departements": Departement_qs,

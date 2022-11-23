@@ -1,0 +1,37 @@
+{% extends "base.html" %}{% load static %} {% block Tilie_block %} {{Semesters.name }}
+|Bibliothèque on Ligne {% endblock Tilie_block %} {% block content %}
+<div class="body__section">
+    <div class="courses__header__ container">
+        <img src="{% static 'img/folder.svg' %}" alt="" />
+        <div class="courses__header_info">
+          <h1>{{ Semesters.name }}</h1>
+          <span>{{ Semesters.departement.name }} </br> {{ Semesters.count }} files</span>
+    
+          {% comment %} <h3> <a href="{{ Semesters.getSemesterViewsURL }}">{{ Modules.semester.name }}</a></h3> {% endcomment %}
+          {% comment %} <h5></h5> {% endcomment %}
+        </div>
+        {% comment %}
+        <a class="add_btn" href="{% url 'course:add-course' Modules.slug %}">
+          <i class="fa-solid fa-plus"></i>
+          Add Course
+        </a>
+        {% endcomment %}
+      </div>
+  <div class="courses__section">
+    {% if Modules %}
+    {% for cours in Modules %}
+    <a href="{{ cours.getModuleViewsURL }}" class="courses__section_box">
+      <img
+        src="{% if cours.semester.departement.name == 'Physique' %}{% static 'img/smp.png' %}{% else %}{% static 'img/smc.png' %}{% endif %}"
+        alt="" />
+      <div class="courses__section_box_body">
+        <h3>{{ cours.name }}</h3>
+        <h5>{{ cours.semester.name }}</h5>
+      </div>
+    </a>
+    {% empty %}
+    <h3>No data</h3>
+    {% endfor %} {% endif %}
+  </div>
+</div>
+{% endblock content %}

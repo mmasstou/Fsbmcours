@@ -33,10 +33,11 @@ profile_btn.addEventListener("click", function(){
     profile_box.classList.toggle('profile_active')
 });
 darkModeBtn.addEventListener("click", function(){
+    alert("clicked me !!")
     console.log("dark mode btn clicked ")
   darkModeBtn.classList.toggle('fa-moon')
   darkModeBtn.classList.toggle('fa-sun')
-  Body.classList.toggle('dark_active')
+//   Body.classList.toggle('dark_active')
   
   // Body.classList.replace('dark_active', 'dark_deactive')
 });

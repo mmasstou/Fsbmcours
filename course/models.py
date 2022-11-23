@@ -59,7 +59,8 @@ class Semester(models.Model):
 
     class Meta:
         ordering = ['-name']
-
+    def getSemesterViewsURL(self):
+        return reverse("course:semester-views",kwargs={"semesterId": self.slug})
     def __str__(self):
         return self.name
 
@@ -84,6 +85,8 @@ class Module(models.Model):
     class Meta:
         ordering = ['-updated','-created']
 
+    def getModuleViewsURL(self):
+        return reverse("course:module-details",kwargs={"semesterId": self.semester.slug, "moduleSlug":self.slug})
     def __str__(self):
         return self.name
 

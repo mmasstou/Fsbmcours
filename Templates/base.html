@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
     <title>{% block Tilie_block %}hhh{% endblock Tilie_block %}</title>
 </head>
-<body class="body_container {{ them }}">
+<body class="body_container">
     <header id="Header">
         <div class="nav__bar container">
             <nav>
@@ -56,10 +56,10 @@
                         {% endif %}
                     </div>
                 </div>
-                <div class="theme-toggler">
-                    <i class="dark_mode_incons fa-solid fa-sun active"></i>
+                {% comment %} <div class="theme-toggler">
+                    <i class="dark_mode_incons fa-solid  dark_active {% if WebConfig_qs.isdark %}  fa-moon {% else %} fa-sun {% endif %}"></i>
                     <!-- <i class="fa-solid fa-moon"></i> -->
-                </div>
+                </div> {% endcomment %}
                 <button class="user__avatar" href="">
                     {% if request.user.is_authenticated %}
                     <img src="{{ request.user.imageURL }}" alt="">

@@ -72,19 +72,19 @@ body{
     user-select: none;
     overflow-x: hidden;
     /* color: var(--black) !important ; */
-    background: var(--dark);
+    background: var(--gray-lighter);
     color: var(--black);
 }
 
 
-body.dark_active{
+/* body.dark_active{
     --white : #000000;
-    /* --black : #ffffff; */
+     --black : #ffffff; 
     --dark : var(--gray-lighter);
     --orange: var(--blue)
     --light : var(var(--dark))
     --dark : var(--light);
-}
+} */
 .add_btn{
     padding: 11px;
     background: var(--blue);
@@ -803,7 +803,7 @@ header{
 }
 .profile__section .profile__content p{
     font-size: 18px;
-    color: var(--white);
+    color: var(--black);
 }
 .profile__section .profile__content p strong{
     font-weight: 500;
@@ -826,7 +826,7 @@ header{
     display: flex;
     flex-direction: column;
     gap: .3rem;
-    color: var(--white);
+    color: var(--black);
 }
 .user__info h3{
     font-size: 19px;
@@ -875,7 +875,7 @@ header{
 }
 
 .profile__form form .input__field  input[type="text"]:focus  {
-    color: var(--white);
+    color: var(--black);
     padding-left: 25px;
 }
 
@@ -888,7 +888,7 @@ header{
     border-radius: 11px;
     cursor: pointer;
     background: var(--orange);
-    color: var(--white);
+    color: var(--black);
     /* background: transparent; */
 }
 .delete_edit_btn{

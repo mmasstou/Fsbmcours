@@ -1,43 +1,67 @@
-{% include "base.html" %} {% load static %} 
-{% block title %} {{ Modules.name | title}} {% endblock title %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block Tilie_block %}{{Modules.name }}
+|Bibliothèque on Ligne {% endblock Tilie_block %} {% block content %}
 <div class="body__section">
-    <div class="courses__header__ container">
-        <img src="{% static 'img/folder.svg' %}" alt="">
-        <div class="courses__header_info">
-            <h1>{{ Modules.name }}</h1>
-            <span>{{ course_size }} files</span>
+  <div class="courses__header__ container">
+    <img src="{% static 'img/folder.svg' %}" alt="" />
+    <div class="courses__header_info">
+      <h1>{{ Modules.name }}
+        <small>({{ Modules.semester.departement.name }})</small>
+      </h1>
+      <span>{{ course_size }} files</span>
 
-        </div>
-        <a class="add_btn" href="{% url 'course:add-course' Modules.slug %}">
-            <i class="fa-solid fa-plus"></i>
-            Add Course
+      <h3> <a href="{{ Modules.semester.getSemesterViewsURL }}">{{ Modules.semester.name }}</a></h3>
+      {% comment %} <h5></h5> {% endcomment %}
+    </div>
+    {% comment %}
+    <a class="add_btn" href="{% url 'course:add-course' Modules.slug %}">
+      <i class="fa-solid fa-plus"></i>
+      Add Course
+    </a>
+    {% endcomment %}
+  </div>
+  <div class="courses__pdfs container">
+    {% for Course in Courses %}
+    <div class="cart__box__">
+      <img
+        class="cart__box_image"
+        src="{% static 'img/PDF_file_icon.png' %}"
+        alt=""
+      />
+      <div class="cart__box_info">
+        {% comment %}
+        <a
+          class="cart__box_info_header"
+          target="_blank"
+          href="{{ Course.pdfURL }}"
+        >
+          <i class="fa-solid fa-download"></i>
+          <span>Telecharge</span>
         </a>
-    </div>
-    <div class="courses__pdfs container">
-        {% for Course in Courses %}
-        <div class="cart__box__">
-            <img class="cart__box_image" src="{% static 'img/PDF_file_icon.png' %}" alt="">
-            <div class="cart__box_info">
-                <a class="cart__box_info_header" target="_blank" href="{{ Course.pdfURL }}">
-                    <i class="fa-solid fa-download"></i>
-                    <span>Telecharge</span>
-                </a>
-                <h2 class="course_title" >{{ Course.name }}</h2>
-                <div class="delete_edit_btn">
-                    <a class="Delete" href="{% url 'course:delete-course'  Modules.slug Course.slug %}">
-                        <i class="fa-solid fa-download"></i>
-                        <span>Delete</span>
-                    </a>
-                    <a class="Edit" href="{% url 'course:edit-course'  Modules.slug Course.slug %}">
-                        <i class="fa-solid fa-download"></i>
-                        <span>Edit</span>
-                    </a>
-                </div>
-            </div>
+        {% endcomment %}
+        <h2 class="course_title">
+          <a href="{{ Course.pdfURL }}" target="_blank" rel="noopener noreferrer">{{ Course.name }}</a>
+        </h2>
+        {% comment %}
+        <div class="delete_edit_btn">
+          <a
+            class="Delete"
+            href="{% url 'course:delete-course'  Modules.slug Course.slug %}"
+          >
+            <i class="fa-solid fa-download"></i>
+            <span>Delete</span>
+          </a>
+          <a
+            class="Edit"
+            href="{% url 'course:edit-course'  Modules.slug Course.slug %}"
+          >
+            <i class="fa-solid fa-download"></i>
+            <span>Edit</span>
+          </a>
         </div>
-        {% endfor %}
+        {% endcomment %}
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock content %}

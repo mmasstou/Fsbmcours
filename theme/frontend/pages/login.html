@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./../assets/css/style.css">
+</head>
+
+<body class="body_container">
+    <header id="Header">
+        <div class="nav__bar container">
+            <nav>
+                <div id="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="left__header">
+                    <img src="../assets/images/logo.png" alt="">
+                    <h2>Fsbmcours</h2>
+                </div>
+                <div class="main__nav">
+                    <a href="">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        Home
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-file"></i>
+                        Courses
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-address-book"></i>
+                        contact Us
+                    </a>
+                </div>
+            </nav>
+            <div class="right__header">
+                <div class="notification">
+                    <div class="profile_box">
+                        <a class="" href="">
+                            <h3>Profile</h3>
+                        </a>
+                        <a class="active" href="">
+                            <i class="fa-solid fa-gear"></i>
+                            <h3>settings</h3>
+                        </a>
+                        <a class="" href="">
+                            <i class="fa-solid fa-message"></i>
+                            <h3>messages</h3>
+                        </a>
+                        <a class="" href="">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <h3>Log out</h3>
+                        </a>
+                        <a class="" href="">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            <h3>Log In</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="theme-toggler">
+                    <i class="dark_mode_incons fa-solid fa-sun active"></i>
+                </div>
+                <button class="user__avatar" href="">
+                    <!-- <img src="./../assets/images/medium_mmasstou.jpg" alt="">
+                    <span>mmasstou messages</span>
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <span href="">Logout</span> -->
+                </button>
+
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="body__section">
+            
+            <div class="login__section">
+                <div class="login__box">
+                    <div class="login__box-header">
+                        <a href="">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span>back</span>
+                        </a>
+                    </div>
+                    <div class="login__box-error_meaasge">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <h3>Username Or Email Incorect</h3>
+                    </div>
+                    <!-- <div class="login__box-login__w_google">
+                        <a href="">
+                            <img src="../assets/images/google.png" alt="">
+                            <h3>Continue with Google</h3>
+                        </a>
+                    </div> -->
+                    <span>Or</span>
+                    <div class="login__box-form">
+                        <form action="">
+                            <div class="input__field">
+                                <label for="">Username</label>
+                                <input type="text" name="username" id="username">
+                            </div>
+                            <div class="input__field">
+                                <label for="">password</label>
+                                <input type="password" name="password" id="password">
+                            </div>
+                            <!-- <div class="input__field">
+                                <label for="">Email</label>
+                                <input type="email" name="password" id="password">
+                            </div> -->
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                    <h3>Have Account ? <a href="">Resgister</a></h3>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./../assets/js/main.js"></script>
+</body>
+
+</html>

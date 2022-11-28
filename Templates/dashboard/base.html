@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{% static 'css/admin_style.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'img/favicon.ico'%}"
+      type="image/x-icon"
+    />
+    <title>
+      {% block Tilie_block %}fs{% endblock Tilie_block %} | Dashboard
+    </title>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="{% static 'img/logo.png'%}" alt="" />
+            <h2>Fsbm<span class="danger">course</span></h2>
+          </div>
+          <div class="close" id="close-btn">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+        </div>
+
+        <ul class="sidebar">
+          <li>
+            <a href="{% url 'index' %}">
+              <i class="fa-solid fa-house"></i>
+              <h3>Home</h3>
+            </a>
+          </li>
+          <li>
+            <a href="{{ request.user.getDashboardViewsURL }}">
+              <i class="fa-solid fa-laptop"></i>
+              <h3>Dashboard</h3>
+            </a>
+          </li>
+          {% for Obj in Departements_sidbar %}
+          <li>
+            <a href="{{ Obj.getdashboard_departement_viewssURL }}">
+              <i class="fa-solid fa-archive"></i>
+              <h3>{{ Obj.name }}</h3>
+            </a>
+          </li>
+          {% endfor %}
+
+
+          <li>
+            <a href="{% url 'dashboard:students-list-views' %}">
+              <i class="fa-solid fa-user"></i>
+              <h3>Student</h3>
+            </a>
+          </li>
+          {% if request.user.is_authenticated %}
+          <li>
+            <div class="profile">
+              <div class="profile-image">
+                <img
+                  src="{{ request.user.imageURL }}"
+                  alt="{{ request.user.first_name}}"
+                />
+              </div>
+              <div class="info">
+                <small class="text-muted"> {{ request.user.first_name}} {{ request.user.last_name}} </small>
+              </div>
+            </div>
+            <a href="{% url 'account:logout' %}" class="logout_box">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <h3 class="">Logout</h3>
+            </a>
+          </li>
+          {% else %}
+          <li>
+            <a href="{% url 'account:login' %}" class="logout_box">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <h3 class="">Log IN</h3>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </aside>
+      <main>
+        <div class="top">
+          <div class="left_section">
+            {% block pageTitle %}
+            <h1>Dashboard</h1>
+            <div class="data">
+              <input type="date"  name="" id="" />
+            </div>
+            {% endblock pageTitle %}
+           
+          </div>
+          <div class="right_section">
+            <button id="menu-btn">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        {% block conatnt %}{% endblock conatnt %}
+        
+      </main>
+    </div>
+    {% block dashboard_script %}{% endblock dashboard_script %}
+  </body>
+</html>

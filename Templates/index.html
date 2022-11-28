@@ -3,13 +3,12 @@
 <div class="body__section">
   <div class="body__section_info">
     <h1>bibliothèque on ligne</h1>
-    <h3>Find Your Module</h3>
+    <h3>Fsbmcours</h3>
   </div>
   <div class="serch__section">
     <!-- <form action="." method="get"> -->
       <!-- <form action="" method="post"> -->
-    <form action="{% url 'index' %}" method="get" enctype="multipart/form-data">
-      {% csrf_token %}
+    <form action="." method="get" enctype="multipart/form-data">
       <i class="fa-solid fa-magnifying-glass"></i>
       <input type="search" name="q" id="q" placeholder="search ... " />
     </form>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my Store | related Products</title>
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="body_container">
+    <header id="Header">
+        <div class="nav__bar container-fluid">
+            <nav>
+                <div id="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="left__header">
+                    <img src="../assets/images/logo.png" alt="">
+                    <h2>mY <span>sTore</span></h2>
+                </div>
+                <div class="main__nav">
+                    <a href="">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        Home
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-address-book"></i>
+                        contact Us
+                    </a>
+                </div>
+            </nav>
+            <div class="right__header">
+                <!-- <a href="">Login</a> -->
+
+                <div class="notification">
+                    <div class="profile_box">
+                        <a class="" href="">
+                            <h3>Profile</h3>
+                        </a>
+                        <a class="active" href="">
+                            <i class="fa-solid fa-gear"></i>
+                            <h3>settings</h3>
+                        </a>
+                        <a class="" href="">
+                            <i class="fa-solid fa-message"></i>
+                            <h3>messages</h3>
+                        </a>
+                        <a class="" href="">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <h3>Log out</h3>
+                        </a>
+                        <a class="" href="">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            <h3>Log In</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="theme-toggler">
+                    <i class="dark_mode_incons fa-solid fa-sun active"></i>
+                    <!-- <i class="fa-solid fa-moon"></i> -->
+                </div>
+                <button class="user__avatar" href="">
+                    <img src="../assets/images/medium_mmasstou.jpg" alt="">
+                    <span>mmasstou</span>
+                    <!-- <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <span href="">Logout</span> -->
+                </button>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="product__categories container">
+            <div class="product__content">
+                <div class="flex-box">
+                    <div class="left">
+                        <div class="images">
+                            <div class="small-img active">
+                                <img src="../assets/images/product01.jpeg" alt="" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-img">
+                                <img src="../assets/images/product02.jpeg" alt="" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-img">
+                                <img src="../assets/images/product03.jpeg" alt="" onclick="showImg(this.src)">
+                            </div>
+                            <div class="small-img">
+                                <img src="../assets/images/product01.jpeg" alt="" onclick="showImg(this.src)">
+                            </div>
+
+                        </div>
+                        <div class="big-img">
+                            <img src="../../assets/media/upload/202210_19/20221019185952mm23.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="product-name">Mandala Stones: 50 Inspirational Designs to Paint vddfdf</div>
+                        <div class="product-id">#c96cdf2b-812c-4aca-8e95-0e0a53b056be</div>
+                        <div class="ratings">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                            <div class="total-reviews">4.8 rating</div>
+                            <button class="btn-reviews-write">
+                                <i class="fa-solid fa-pen-nib"></i>
+                                Write a review
+                            </button>
+                        </div>
+                        <div class="available-offers">
+                            <p>Available offers :</p>
+                            <div class="available-offer">
+                                <i class="fa-solid fa-tag"></i>
+                                Get 7% OFF. Max Discount MAD 5,040.00
+                            </div>
+                            <div class="available-offer"><i class="fa-solid fa-tag"></i> Extra 10% Cashback on Express
+                                Shipping</div>
+                            <div class="available-offer"><i class="fa-solid fa-tag"></i> Enjoy Flat 7% OFF on Product
+                                Over
+                                0.5 kg Weight</div>
+                        </div>
+                        <div class="price">$124</div>
+                        <div class="availability">
+                            <p>Availability : </p>
+                            <div class="product-availability"> In Stock</div>
+                            <!-- <div class="product-availability-stock">Imported from USA store</div> -->
+                        </div>
+                        <div class="quantity">
+                            <p>Quantity :</p>
+                            <input type="number" min="1" max="6" value="1">
+                        </div>
+                        <div class="btn-box">
+                            <button class="cart-btn">Add to Cart</button>
+                            <button class="buy-btn">Buy Now</button>
+                        </div>
+                        <div class="discription">
+                            <p>Discription :</p>
+                            <div class="disctription-content">
+                                For more information on this book, visit our author profile on Amazon.
+                                Relaxing adult coloring book with hand-drawn mandala style patterns.
+                                Fantastic and relaxing patterns will allow you to break away from the chaos of everyday
+                                life
+                                and plunge into the land of peace and relaxation.
+                                Originality. All drawings are hand drawn. Individual patterns are always created with
+                                passion. This guarantees the uniqueness and originality of the performance.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="Pages_section container">
+            <div class="header__section">
+                <div class="content">
+                    <h4 class="above-title">Products</h4>
+                    <h2 class="title">Related Pages</h2>
+                </div>
+            </div>
+            <div class="_pages__contents">
+                <div class="page_box">
+                    <img src="../../assets/media/upload/202210_23/20221023043126adultt.jpg" alt="">
+                    <h5>Mandala 03.</h5>
+                </div>
+                <div class="page_box">
+                    <img src="../../assets/media/upload/202210_23/20221023043105adult.jpeg" alt="">
+                    <h5>Mandala Stones: 50 Inspirational Designs to</h5>
+                </div>
+                <div class="page_box">
+                    <img src="../../assets/media/upload/202210_23/20221023041303product01.jpeg" alt="">
+                    <h5>Mandala Stones: 50 Inspirational Designs to</h5>
+                </div>
+                <div class="page_box">
+                    <img src="../assets/images/product01.jpeg" alt="">
+                    <h5>Mandala Stones: 50 Inspirational Designs to</h5>
+                </div>
+                <div class="page_box">
+                    <img src="../assets/images/product01.jpeg" alt="">
+                    <h5>Mandala Stones: 50 Inspirational Designs to</h5>
+                </div>
+                <div class="page_box">
+                    <img src="../assets/images/product01.jpeg" alt="">
+                    <h5>Mandala Stones: 50 Inspirational Designs to</h5>
+                </div>
+                <div class="page_box">
+                    <img src="../assets/images/product01.jpeg" alt="">
+                    <h5>Mandala Stones: 50 Inspirational Designs to</h5>
+                </div>
+                <div class="page_box">
+                    <img src="../assets/images/product01.jpeg" alt="">
+                    <h5>Mandala Stones: 50 Inspirational Designs to</h5>
+                </div>
+                <div class="page_box">
+                    <img src="../assets/images/product01.jpeg" alt="">
+                    <h5>Mandala Stones: 50 Inspirational Designs to</h5>
+                </div>
+                <div class="page_box">
+                    <img src="../assets/images/product01.jpeg" alt="">
+                    <h5>Mandala Stones: 50 Inspirational Designs to</h5>
+                </div>
+            </div>
+        </section>
+        <section class="RelatedProducts_ container">
+            <div class="header__section container">
+                <div class="content">
+                    <h4 class="above-title">Products</h4>
+                    <h2 class="title">Related Products</h2>
+                </div>
+                <div class="slider-navigation">
+                    <div class="prev">
+                        <svg viewBox="0 0 24 24">
+                            <use xlink:href="../assets/images/sprite.svg#arrow-left"></use>
+                        </svg>
+                    </div>
+                    <div class="next">
+                        <svg viewBox="0 0 24 24">
+                            <use xlink:href="../assets/images/sprite.svg#arrow-right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="RelatedProducts-item-wrapper container">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="Products_card swiper-slide">
+                            <img class="Products_card_img" src="../assets/images/mm2 copy.jpg"
+                                alt="Product {{product.name}}">
+                            <div class="box_info">
+                                <div class="box_info_content">
+                                    <a href="">
+                                        <h1 class="max-lines">Animals Coloring Book for Adults: Mandala and Ink Drawing
+                                            Style</h1>
+                                    </a>
+                                    </a>
+                                    <h6>5 hours ago</h6>
+                                    <h6>09 Files</h6>
+                                    <h6>65435 Views</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Products_card swiper-slide">
+                            <img class="Products_card_img" src="../assets/images/mm01.jpg"
+                                alt="Product {{product.name}}">
+                            <div class="box_info">
+                                <div class="box_info_content">
+                                    <a href="">
+                                        <h1 class="max-lines">Animals Coloring Book for Adults: Mandala and Ink Drawing
+                                            Style</h1>
+                                    </a>
+                                    </a>
+                                    <h6>5 hours ago</h6>
+                                    <h6>09 Files</h6>
+                                    <h6>65435 Views</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Products_card swiper-slide">
+                            <img class="Products_card_img" src="../assets/images/mm2.jpg"
+                                alt="Product {{product.name}}">
+                            <div class="box_info">
+                                <div class="box_info_content">
+                                    <a href="">
+                                        <h1 class="max-lines">Animals Coloring Book for Adults: Mandala and Ink Drawing
+                                            Style</h1>
+                                    </a>
+                                    </a>
+                                    <h6>5 hours ago</h6>
+                                    <h6>09 Files</h6>
+                                    <h6>65435 Views</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Products_card swiper-slide">
+                            <img class="Products_card_img" src="../assets/images/mm23.jpeg"
+                                alt="Product {{product.name}}">
+                            <div class="box_info">
+                                <div class="box_info_content">
+                                    <a href="">
+                                        <h1 class="max-lines">Animals Coloring Book for Adults: Mandala and Ink Drawing
+                                            Style</h1>
+                                    </a>
+                                    </a>
+                                    <h6>5 hours ago</h6>
+                                    <h6>09 Files</h6>
+                                    <h6>65435 Views</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Products_card swiper-slide">
+                            <img class="Products_card_img" src="../assets/images/mm2.jpg"
+                                alt="Product {{product.name}}">
+                            <div class="box_info">
+                                <div class="box_info_content">
+                                    <a href="">
+                                        <h1 class="max-lines">Animals Coloring Book for Adults: Mandala and Ink Drawing
+                                            Style</h1>
+                                    </a>
+                                    </a>
+                                    <h6>5 hours ago</h6>
+                                    <h6>09 Files</h6>
+                                    <h6>65435 Views</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Products_card swiper-slide">
+                            <img class="Products_card_img" src="../assets/images/mm23.jpeg"
+                                alt="Product {{product.name}}">
+                            <div class="box_info">
+                                <div class="box_info_content">
+                                    <a href="">
+                                        <h1 class="max-lines">Animals Coloring Book for Adults: Mandala and Ink Drawing
+                                            Style</h1>
+                                    </a>
+                                    </a>
+                                    <h6>5 hours ago</h6>
+                                    <h6>09 Files</h6>
+                                    <h6>65435 Views</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer_content container">
+                <div class="about">
+                    <img src="../assets/images/logo.png" alt="">
+                    <p>
+                        For more information on this book, visit our author profile on Amazon. Relaxing adult coloring book with hand-drawn mandala style patterns. Fantastic and relaxing patterns will allow you to break away from the chaos of everyday life
+                    </p>
+                </div>
+                <div class="our_stores">
+                    <h3>Our Store</h3>
+                    <div class="link">
+                        <a href="">Amazon Canada</a>
+                        <a href="">Amazon France</a>
+                        <a href="">Amazon Italy</a>
+                        <a href="">Amazon Germany</a>
+                        <a href="">Amazon United Kingdom</a>
+                        <a href="">Amazon United States</a>
+                        <a href="">Amazon Japan</a>
+                    </div>
+                </div>
+                <div class="copyright">
+                   Copyright Protacted &copy;
+                   <strong> my <span>store</span></strong>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+{% extends 'dashboard/base.html' %} {% load static %}
+{% block Tilie_block %} {{ Semesters.name }} {% endblock Tilie_block %}
+
+{% block conatnt %}
+<div class="flex-btn mb-3rem">
+  <a href="{{ Semesters.AddModuleURL }}" class="primary">
+      <i class="fa-solid fa-plus"></i>
+      Add Product
+  </a>
+</div>
+<div class="insights">
+    {% for Obj in Modules %}
+    <div class="element___box ">
+        <img class="__element__box_img {% if Obj.ispublic %}public{% else %}not_public{% endif %}" src="{% static 'img/obj.jpg' %}" alt="Product {{Obj.name}}">
+        <div class="box_info">
+             <div class="del_Edit_btn flex-btn">
+                <a class="btn danger" href="">
+                    <i  class="fa-solid fa-trash"></i>
+                </a>
+                <form class="btn published_btn" action="">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <i class="pub_icon fa-solid fa-eye"></i>
+                 </form>
+            </div>
+            <div class="box_info_content">
+                <h1>{{ Obj.name }}</h1>
+                <h6>{{ Obj.created}}</h6>
+                <h6>{{ Obj.count }} Files</h6>
+                <h6>{{ Obj.views }} Views</h6>
+                <div class="flex-btn">
+                    <a href="{{ Obj.getDashboardModuleViewsURL }}" class="primary">
+                        See Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock conatnt %}

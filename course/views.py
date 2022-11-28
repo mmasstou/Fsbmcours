@@ -1,22 +1,34 @@
 from django.shortcuts import render, redirect
-from course.models import Course, Module, Semester
+from course.models import Course, Module, Semester, Departement
 from .forms import Adding_courseForm
 # Create your views here.
 
-def moduleDetails(request, semesterId, moduleSlug):
+def moduleDetails(request,departementId, semesterId, moduleSlug):
     Module_qs = Module.objects.get(slug=moduleSlug)
     courses_ds = Course.objects.filter(
         module = Module_qs
     )
+    departement_qs = Departement.objects.get(name = departementId)
+    semester_qs = Semester.objects.get(
+        departement = departement_qs,
+        slug = semesterId
+    )
     context = {
+        "Semesters":semester_qs,
         "course_size":courses_ds.count(),
         "title":Module_qs.name,
         "Modules":Module_qs,
         "Courses":courses_ds
     }
     return render(request, "moduleDetails.html", context)
-def semesterViews(request, semesterId):
-    semester_qs = Semester.objects.get(slug = semesterId)
+def semesterViews(request,departementId, semesterId):
+    departement_qs = Departement.objects.get(
+        name = departementId
+    )
+    semester_qs = Semester.objects.get(
+        departement = departement_qs,
+        slug = semesterId
+        )
     module_qs = Module.objects.filter(semester = semester_qs)
     context = {
         "Semesters":semester_qs,

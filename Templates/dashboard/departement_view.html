@@ -1,0 +1,36 @@
+{% extends 'dashboard/base.html' %} {% load static %}
+{% block Tilie_block %}{{ Departements }} {% endblock Tilie_block %}
+
+{% block conatnt %}
+<div class="flex-btn">
+  <a href="./cataguru-details.html" class="primary">
+      <i class="fa-solid fa-plus"></i>
+      Add Product
+  </a>
+</div>
+<div class="insights">
+    {% for obj in Semesters %}
+    <div class="catagurys">
+        <span>{{obj.count }}</span>
+        <img src="{% if obj.name == 'Physique' %}{% static 'img/smp.png' %}{% else %}{% static 'img/smc.png' %}{% endif %}" alt="" />
+        <div class="middle">
+          <h3>{{ obj.name }}</h3>
+          <span>
+            <i class="fa-solid fa-eye"></i>
+            22 Views
+          </span>
+          <div class="flex-btn">
+            <a href="" class="danger">
+              <i class="fa-solid fa-trash"></i>
+            </a>
+            <a href="{{ obj.getDashboardSemesterViewsURL }}" class="primary">
+              See Details
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock conatnt %}

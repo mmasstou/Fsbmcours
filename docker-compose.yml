@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    volumes:
+      - .:/FSBM_APP
+    ports:
+      - 8000:8000
+    image: app:FSBM_APP
+    container_name: Fsbmcours
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+  db:
+    image: mysql
+    volumes:
+      - ./data/mysql/dbb:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: 'django_db'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+

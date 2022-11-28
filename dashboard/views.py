@@ -1,0 +1,173 @@
+from django.shortcuts import render, redirect
+from course.models import (
+    Departement,
+    Semester,
+    Module,
+    Course
+)
+from account.models import User
+from dashboard.forms import (
+    Aadd_Module_Form,
+    Aadd_Course_Form
+    )
+template_name = "dashboard/"
+# Create your views here.departement_view.html
+def DashboardPageViews(request):
+    if not request.user.is_authenticated:
+        return redirect('account:login')
+    Departement_qs = Departement.objects.all()
+    context = {
+        'Departements_sidbar':Departement_qs,
+        'Departements':Departement_qs,
+    }
+    return render(request, "dashboard/home-ViewsPage.html", context)
+def DashboardDepartement_view(request, departement):
+    if not request.user.is_authenticated:
+        return redirect('account:login')
+    Departement_qs = Departement.objects.get(name= departement)
+    Semester_qs = Semester.objects.filter(departement= Departement_qs)
+    context = {
+        'Departements_sidbar':Departement.objects.all(),
+        'Departements':Departement_qs,
+        'Semesters':Semester_qs,
+    }
+    return render(request, "dashboard/departement_view.html", context)
+# ! Semester List View
+def DashboardSemester_view(request, departement, semesterId):
+    if not request.user.is_authenticated:
+        return redirect('account:login')
+    Departement_qs = Departement.objects.get(name= departement)
+    Semester_qs = Semester.objects.get(
+        departement = Departement_qs,
+        slug= semesterId
+        )
+    Module_qs = Module.objects.filter(semester = Semester_qs)
+    context = {
+        'Departements_sidbar':Departement.objects.all(),
+         'Departements':Departement_qs,
+        'Semesters':Semester_qs,
+        'Modules': Module_qs.order_by("created")
+    }
+    return render(request, "dashboard/semester_view.html", context)
+
+def Add_Module(request, departementId, semesterId):
+
+    departement_qs = Departement.objects.get(
+        name = departementId
+    )
+    semester_qs = Semester.objects.get(
+        departement = departement_qs,
+        slug = semesterId
+    )
+    module_qs = Module.objects.filter(
+        semester = semester_qs
+
+    )
+    form = Aadd_Module_Form()
+    if request.method == "POST":
+        form = Aadd_Module_Form(request.POST)
+        if form.is_valid():
+            module_Q = form.save(commit=False)
+            module_Q.semester = semester_qs
+            module_Q.save()
+            semester_qs.count = module_qs.count()
+            semester_qs.save()
+            path = request.META.get('HTTP_REFERER')
+            path01 = path.split("/")[1]
+            P = path[path.find("/")+2:]
+            P = P[P.find("/"):].split("/Add/")[0]
+            print("Path : ", P)
+            return redirect(f'{P}')
+        else:
+            print("Error :form Is not valid")
+    else:
+        print("Error : method Is not POST")
+
+    context = {
+        'Departements_sidbar':Departement.objects.all(),
+        'form':form
+    }
+    return render(request, "dashboard/add_form.html", context)
+# ! module Views
+def DashboardModuleView(request, departementId, semesterId, moduleId):
+    departement_qs = Departement.objects.get(
+        name = departementId
+    )
+    semester_qs = Semester.objects.get(
+        departement = departement_qs,
+        slug = semesterId
+    )
+    module_qs = Module.objects.get(
+        semester = semester_qs,
+        slug = moduleId
+    )
+    course_qs = Course.objects.filter(
+        module = module_qs
+    )
+    context = {
+        'Departements_sidbar':Departement.objects.all(),
+        "Departements":departement_qs,
+        "Semesters":semester_qs,
+        "Modules":module_qs,
+        "Courses":course_qs
+    }
+    return render(request, "dashboard/module_view.html", context)
+
+def Add_Course(request, departementId, semesterId, moduleId):
+
+    departement_qs = Departement.objects.get(
+        name = departementId
+    )
+    semester_qs = Semester.objects.get(
+        departement = departement_qs,
+        slug = semesterId
+    )
+    module_qs = Module.objects.get(
+        semester = semester_qs,
+        slug = moduleId
+    )
+    course_qs = Course.objects.filter(
+        module = module_qs
+    )
+    path = request.META.get('HTTP_REFERER')
+    path01 = path.split("/")[1]
+    P = path[path.find("/")+2:]
+    P = P[P.find("/"):].split("/Add/")[0]
+    print("Path : ", P)
+    form = Aadd_Course_Form()
+    if request.method == "POST":
+        form = Aadd_Course_Form(request.POST, request.FILES)
+        if form.is_valid():
+            Course_Q = form.save(commit=False)
+            Course_Q.module = module_qs
+            if course_qs.filter(name = Course_Q.name).count() > 0 :
+                print("Error :Duplicate element")
+                return redirect(f'{P}')
+            Course_Q.save()
+            module_qs.count = course_qs.count()
+            module_qs.save()
+           
+            return redirect(f'{P}')
+        else:
+            print("Error :form Is not valid")
+    else:
+        print("Error : method Is not POST")
+
+    context = {
+        'Departements_sidbar':Departement.objects.all(),
+        'form':form
+    }
+    return render(request, "dashboard/add_form.html", context)
+
+
+
+
+
+def StudentsListViews(request):
+    if not request.user.is_authenticated:
+        return redirect('account:login')
+    user_qs = User.objects.all()
+    context = {
+        "Users":user_qs,
+    }
+    return render(request, "dashboard/students.html", context)

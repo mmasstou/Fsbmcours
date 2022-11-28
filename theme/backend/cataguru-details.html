@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./assets/img/icone-achat.png" alt="">
+                    <h2>My <span class="danger">Store</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+            </div>
+
+            <ul class="sidebar">
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-house"></i>
+                    <h3>Home</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-user"></i>
+                        <h3>Customers</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-cart-flatbed"></i>
+                        <h3 class="">Product</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-solid fa-message"></i>
+                        <h3 class="">Messages</h3>
+                        <span class="item-conut">23</span>
+                    </a>
+                </li>
+                <li>
+                        <div class="profile">
+                            <div class="profile-image">
+                                <img src="./assets/img/medium_mmasstou.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <small class="text-muted">
+                                    Admin
+                                </small>
+                            </div>
+                        </div>
+                        <a href="" class="logout_box">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <h3 class="">Logout</h3>
+                        </a>
+                </li>
+            </ul>
+            
+        </aside>
+        <main>
+            <h1>Dashboard - Catagury Details</h1>
+            <div class="flex-btn">
+                <a href="./cataguru-details.html" class="primary">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Product
+                </a>
+            </div>
+            <div class="insights">
+                <div class="element___box ">
+                    <img class="__element__box_img " src="./assets/img/product01.jpeg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                         <div class="del_Edit_btn flex-btn">
+                            <a class="btn danger" href="">
+                                <i  class="fa-solid fa-trash"></i>
+                            </a>
+                            <form class="btn published_btn" action="">
+                                <input type="checkbox" name="checkbox" id="checkbox">
+                                <i class="pub_icon fa-solid fa-eye"></i>
+                             </form>
+                        </div>
+                        <div class="box_info_content">
+                            <h1>{{product.name}}</h1>
+                            <h6>{{ product.created | naturaltime}}</h6>
+                            <h6>{{ product.count }} Files</h6>
+                            <h6>{{ product.views }} Views</h6>
+                            <div class="flex-btn">
+                                <a href="./cataguru-details.html" class="primary">
+                                    See Details
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="element___box">
+                    <img class="element__box_img" src="./assets/img/product02.jpeg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                         <div class="del_Edit_btn flex-btn">
+                            <a class="btn danger" href="">
+                                <i  class="fa-solid fa-trash"></i>
+                            </a>
+                        
+                        </div>
+                        <div class="box_info_content">
+                            <h1>{{product.name}}</h1>
+                            <h6>{{ product.created | naturaltime}}</h6>
+                            <h6>{{ product.count }} Files</h6>
+                            <h6>{{ product.views }} Views</h6>
+                            <div class="flex-btn">
+                                <a href="./product-details.html" class="primary">
+                                    See Details
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="element___box">
+                    <img class="element__box_img" src="./assets/img/product03.jpeg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                         <div class="del_Edit_btn flex-btn">
+                            <a class="btn danger" href="">
+                                <i  class="fa-solid fa-trash"></i>
+                            </a>
+                        
+                        </div>
+                        <div class="box_info_content">
+                            <h1>{{product.name}}</h1>
+                            <h6>{{ product.created | naturaltime}}</h6>
+                            <h6>{{ product.count }} Files</h6>
+                            <h6>{{ product.views }} Views</h6>
+                            <div class="flex-btn">
+                                <a href="./cataguru-details.html" class="primary">
+                                    See Details
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="element___box">
+                    <img class="element__box_img" src="./assets/img/product01.jpeg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                         <div class="del_Edit_btn flex-btn">
+                            <a class="btn danger" href="">
+                                <i  class="fa-solid fa-trash"></i>
+                            </a>
+                            <form class="btn published_btn" action="">
+                                <input type="checkbox" name="checkbox" id="checkbox">
+                                <i class="pub_icon fa-solid fa-eye"></i>
+                             </form>
+                        </div>
+                        <div class="box_info_content">
+                            <h1>{{product.name}}</h1>
+                            <h6>{{ product.created | naturaltime}}</h6>
+                            <h6>{{ product.count }} Files</h6>
+                            <h6>{{ product.views }} Views</h6>
+                            <div class="flex-btn">
+                                <a href="./cataguru-details.html" class="primary">
+                                    See Details
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="element___box">
+                    <img class="element__box_img" src="./assets/img/product02.jpeg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                         <div class="del_Edit_btn flex-btn">
+                            <a class="btn danger" href="">
+                                <i  class="fa-solid fa-trash"></i>
+                            </a>
+                        
+                        </div>
+                        <div class="box_info_content">
+                            <h1>{{product.name}}</h1>
+                            <h6>{{ product.created | naturaltime}}</h6>
+                            <h6>{{ product.count }} Files</h6>
+                            <h6>{{ product.views }} Views</h6>
+                            <div class="flex-btn">
+                                <a href="./product-details.html" class="primary">
+                                    See Details
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="element___box">
+                    <img class="element__box_img" src="./assets/img/product03.jpeg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                         <div class="del_Edit_btn flex-btn">
+                            <a class="btn danger" href="">
+                                <i  class="fa-solid fa-trash"></i>
+                            </a>
+                        
+                        </div>
+                        <div class="box_info_content">
+                            <h1>{{product.name}}</h1>
+                            <h6>{{ product.created | naturaltime}}</h6>
+                            <h6>{{ product.count }} Files</h6>
+                            <h6>{{ product.views }} Views</h6>
+                            <div class="flex-btn">
+                                <a href="./cataguru-details.html" class="primary">
+                                    See Details
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./assets/main.js"></script>
+</body>
+</html>

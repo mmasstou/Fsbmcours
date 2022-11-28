@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#%7c+l$pp+f88ju*s$m2*b)v=rea!*2(m(0b=(bix-(o-egck)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1"]
 AUTH_USER_MODEL = 'account.User'
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
     'course.apps.CourseConfig',
+    'dashboard.apps.DashboardConfig',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [

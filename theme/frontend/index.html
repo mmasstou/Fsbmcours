@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my Store</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="body_container">
+    <header id="Header">
+        <div class="nav__bar container">
+            <nav>
+                <div id="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="left__header">
+                    <img src="./assets/images/logo.png" alt="">
+                    <h2>mY <span>sTore</span></h2>
+                </div>
+                <div class="main__nav">
+                    <a href="">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        Home
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-address-book"></i>
+                        contact Us
+                    </a>
+                </div>
+            </nav>
+            <div class="right__header">
+                <!-- <a href="">Login</a> -->
+
+                <div class="notification">
+                    <div class="profile_box">
+                        <a class="" href="">
+                            <h3>Profile</h3>
+                        </a>
+                        <a class="active" href="">
+                            <i class="fa-solid fa-gear"></i>
+                            <h3>settings</h3>
+                        </a>
+                        <a class="" href="">
+                            <i class="fa-solid fa-message"></i>
+                            <h3>messages</h3>
+                        </a>
+                        <a class="" href="">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <h3>Log out</h3>
+                        </a>
+                        <a class="" href="">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            <h3>Log In</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="theme-toggler">
+                    <i class="dark_mode_incons fa-solid fa-moon active"></i>
+                    <!-- <i class="fa-solid fa-moon"></i> -->
+                </div>
+                <button class="user__avatar" href="">
+                    <img src="./assets/images/medium_mmasstou.jpg" alt="">
+                    <span>mmasstou</span>
+                    <!-- <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <span href="">Logout</span> -->
+                </button>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="body__section">
+            <div class="serch__section">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="" placeholder="search ... " id="">
+            </div>
+        </section>
+        <section class="Catagurys_ container">
+            <div class="box__header">
+                featured categories
+            </div>
+            <div class="Catagurys__box">
+                <a href="" class="catagury_card">
+                    <div class="catagury_card_img">
+                        <img class="Featured__categories_img" src="./assets/images/smp.png" alt="{{catagury.name}}">
+                    </div>
+                    <div class="catagury_card_name">
+                        <p class="title">Sketchbooks</p>
+                    </div>
+                </a>
+                <a href="" class="catagury_card">
+                    <div class="catagury_card_img">
+                        <img class="Featured__categories_img" src="./assets/images/smp.png" alt="{{catagury.name}}">
+                    </div>
+                    <div class="catagury_card_name">
+                        <p class="title">Sketchbooks</p>
+                    </div>
+                </a>
+                <a href="" class="catagury_card">
+                    <div class="catagury_card_img">
+                        <img class="Featured__categories_img" src="./assets/images/smp.png" alt="{{catagury.name}}">
+                    </div>
+                    <div class="catagury_card_name">
+                        <p class="title">Sketchbooks Sketchbooks Sketchbooks</p>
+                    </div>
+                </a>
+                <a href="" class="catagury_card">
+                    <div class="catagury_card_img">
+                        <img class="Featured__categories_img" src="./assets/images/smp.png" alt="{{catagury.name}}">
+                    </div>
+                    <div class="catagury_card_name">
+                        <p class="title">Sketchbooks</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section class="Products_ container-fluid">
+            <div class="box__header">
+                Popular Products
+            </div>
+            <div class="Products__box">
+                <div class="Products_card">
+                    <img class="Products_card_img" src="./assets/images/mm2 copy.jpg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                        <div class="box_info_content">
+                            <a href="">
+                                    <h1 class="max-lines" >Animals Coloring Book for Adults: Mandala and Ink Drawing Style</h1>
+                                </a>
+                            </a>
+                            <h6>5 hours ago</h6>
+                            <h6>09 Files</h6>
+                            <h6>65435 Views</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="Products_card">
+                    <img class="Products_card_img" src="./assets/images/mm01.jpg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                        <div class="box_info_content">
+                            <a href="">
+                                    <h1 class="max-lines" >Animals Coloring Book for Adults: Mandala and Ink Drawing Style</h1>
+                                </a>
+                            </a>
+                            <h6>5 hours ago</h6>
+                            <h6>09 Files</h6>
+                            <h6>65435 Views</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="Products_card">
+                    <img class="Products_card_img" src="./assets/images/mm2.jpg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                        <div class="box_info_content">
+                            <a href="">
+                                    <h1 class="max-lines" >Animals Coloring Book for Adults: Mandala and Ink Drawing Style</h1>
+                                </a>
+                            </a>
+                            <h6>5 hours ago</h6>
+                            <h6>09 Files</h6>
+                            <h6>65435 Views</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="Products_card">
+                    <img class="Products_card_img" src="./assets/images/mm23.jpeg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                        <div class="box_info_content">
+                            <a href="">
+                                    <h1 class="max-lines" >Animals Coloring Book for Adults: Mandala and Ink Drawing Style</h1>
+                                </a>
+                            </a>
+                            <h6>5 hours ago</h6>
+                            <h6>09 Files</h6>
+                            <h6>65435 Views</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="Products_card">
+                    <img class="Products_card_img" src="./assets/images/mm2.jpg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                        <div class="box_info_content">
+                            <a href="">
+                                    <h1 class="max-lines" >Animals Coloring Book for Adults: Mandala and Ink Drawing Style</h1>
+                                </a>
+                            </a>
+                            <h6>5 hours ago</h6>
+                            <h6>09 Files</h6>
+                            <h6>65435 Views</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="Products_card">
+                    <img class="Products_card_img" src="./assets/images/mm23.jpeg" alt="Product {{product.name}}">
+                    <div class="box_info">
+                        <div class="box_info_content">
+                            <a href="">
+                                    <h1 class="max-lines" >Animals Coloring Book for Adults: Mandala and Ink Drawing Style</h1>
+                                </a>
+                            </a>
+                            <h6>5 hours ago</h6>
+                            <h6>09 Files</h6>
+                            <h6>65435 Views</h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

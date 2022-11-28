@@ -1,20 +1,20 @@
-altgraph @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot2/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-124/altgraph-0.17.2-py2.py3-none-any.whl
+altgraph 
 asgiref==3.4.1
 cffi==1.15.0
 cryptography==35.0.0
 Django==3.2.8
 django-cors-headers==3.8.0
-future @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot2/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-124/future-0.18.2-py3-none-any.whl
+future 
 gevent==22.8.0
 greenlet==1.1.3
 gsmtpd==0.2
-macholib @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot2/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-124/macholib-1.15.2-py2.py3-none-any.whl
+macholib 
 mysqlclient==2.1.1
 Pillow==8.4.0
 pycparser==2.20
 PyMySQL==1.0.2
 pytz==2021.3
-six @ file:///System/Volumes/Data/SWE/Apps/DT/BuildRoots/BuildRoot2/ActiveBuildRoot/Library/Caches/com.apple.xbs/Sources/python3/python3-124/six-1.15.0-py2.py3-none-any.whl
+six 
 sqlparse==0.4.2
 whitenoise==5.3.0
 zope.event==4.5.0

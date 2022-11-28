@@ -1,0 +1,44 @@
+{% extends 'dashboard/base.html' %} {% load static %} 
+{% load humanize %}
+{% block Tilie_block %} Students  {% endblock Tilie_block %}
+
+{% block conatnt %}
+
+<h1>Dashboard - Students Details</h1>
+<div class="flex-btn">
+    <a href="./cataguru-details.html" class="primary">
+        <i class="fa-solid fa-plus"></i>
+        Add Product
+    </a>
+</div>
+<div class="insights">
+    {% for obj in Users %}
+    <div class="element___box public">
+        <img class="element__box_img" src="{{ obj.imageURL }}" alt="Product {{obj.name}}">
+        <div class="box_info">
+            <div class="del_Edit_btn flex-btn">
+                <a class="btn danger" href="">
+                    <i  class="fa-solid fa-trash"></i>
+                </a>
+                <form class="btn published_btn" action="">
+                    <input type="checkbox" name="checkbox" id="checkbox">
+                    <i class="pub_icon fa-solid fa-eye"></i>
+                </form>
+            </div>
+            <div class="box_info_content">
+                <h1>{{obj.username}}</h1>
+                <h5>{{ obj.email }}</h5>
+                <h6>{{ obj.date_joined | naturaltime}}</h6>
+                <div class="flex-btn">
+                    <a href="./cataguru-details.html" class="primary">
+                        See Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock conatnt %}

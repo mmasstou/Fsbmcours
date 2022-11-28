@@ -1,0 +1,36 @@
+{% extends 'dashboard/base.html' %} {% load static %}
+{% block Tilie_block %}Admin {% endblock Tilie_block %}
+
+{% block conatnt %}
+<div class="flex-btn">
+  <a href="./cataguru-details.html" class="primary">
+      <i class="fa-solid fa-plus"></i>
+      Add Product
+  </a>
+</div>
+<div class="insights">
+    {% for departement in Departements %}
+    <div class="catagurys">
+        {% comment %} <span>{{ departement.count }} </span> {% endcomment %}
+        <img src="{% if departement.name == 'Physique' %}{% static 'img/smp.png' %}{% else %}{% static 'img/smc.png' %}{% endif %}" alt="" />
+        <div class="middle">
+          <h3>{{ departement.name }}</h3>
+          <span>
+            <i class="fa-solid fa-eye"></i>
+            {{ departement.view }} Views
+          </span>
+          <div class="flex-btn">
+            <a href="" class="danger">
+              <i class="fa-solid fa-trash"></i>
+            </a>
+            <a href="{{ departement.getdashboard_departement_viewssURL }}" class="primary">
+              See Details
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock conatnt %}

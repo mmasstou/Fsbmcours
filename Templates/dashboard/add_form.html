@@ -1,0 +1,27 @@
+{% extends 'dashboard/base.html' %} {% load static %}
+{% load humanize %}
+{% block Tilie_block %} Students {% endblock Tilie_block %}
+
+{% block conatnt %}
+
+<h1>Dashboard - Students Details</h1>
+<div class="insights">
+    <div class="__form">
+        <form action="." method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</div>
+
+{% endblock conatnt %}
+{% block dashboard_script %}
+<script>
+    let form_field = document.getElementsByTagName('input')
+    for (let index in form_field) {
+        form_field[index].className += 'input__field';
+
+    }
+</script>
+{% endblock dashboard_script %}

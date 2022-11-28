@@ -4,13 +4,17 @@
 
 {% block conatnt %}
 
-<h1>Dashboard - Students Details</h1>
+<h1 style="margin-bottom: 2rem;" >Dashboard - {{ AddFormTitle }}</h1>
 <div class="insights">
     <div class="__form">
         <form action="." method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form }}
-            <button type="submit">Create</button>
+            {% if type %}
+                <button type="submit">Update</button>
+            {% else %}
+                <button type="submit">Create</button>
+            {% endif %}
         </form>
     </div>
 </div>
@@ -20,7 +24,9 @@
 <script>
     let form_field = document.getElementsByTagName('input')
     for (let index in form_field) {
-        form_field[index].className += 'input__field';
+        if (form_field[index].type != "file")
+            form_field[index].className += 'input__field';
+        
 
     }
 </script>

@@ -19,7 +19,7 @@
         <img class="__element__box_img " src="{% static 'img/obj.jpg' %}" alt="Product {{Obj.name}}">
         <div class="box_info">
              <div class="del_Edit_btn flex-btn">
-                <a class="btn danger" href="">
+                <a class="btn danger" href="{{ Obj.DeleteCourseURL }}">
                     <i  class="fa-solid fa-trash"></i>
                 </a>
                 <form class="btn published_btn" action="">
@@ -32,12 +32,12 @@
                 <h6>{{ Obj.created}}</h6>
                 <h6>{{ Obj.count }} Files</h6>
                 <h6>{{ Obj.views }} Views</h6>
-                {% comment %} <div class="flex-btn">
-                    <a href="{{ Obj.getDashboardModuleViewsURL }}" class="primary">
-                        See Details
-                        <i class="fa-solid fa-arrow-right"></i>
+                <div class="flex-btn">
+                    <a href="{{ Obj.EditCourseURL }}" class="primary">
+                        <i class="fa-solid fa-pencil"></i>
+                        Edit
                     </a>
-                </div> {% endcomment %}
+                </div> 
             </div>
         </div>
     </div>

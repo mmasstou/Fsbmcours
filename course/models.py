@@ -91,7 +91,6 @@ class Module(models.Model):
     count = models.IntegerField(default=0)
     semester = models.ForeignKey(Semester, on_delete=models.SET_NULL, null=True)
     ispublic = models.BooleanField(default=False, null=True, blank=True)
-    # departement = models.ForeignKey(Departement, on_delete=models.SET_NULL, null=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(null=True, blank= True)
@@ -134,20 +133,11 @@ class Module(models.Model):
 class Course(models.Model):
     name = models.CharField(max_length=200)
     module = models.ForeignKey(Module, on_delete=models.SET_NULL, null=True)
-    # description = models.TextField(null=True, blank=True)
     course_file = models.FileField(upload_to=getFileName) 
     veiw = models.IntegerField(default=0)
     count = models.IntegerField(default=0)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
-    # slug = models.SlugField(null=True, blank= True)
-
-    # def save(self, *args, **kwargs):
-
-    #     if self.slug == None:
-    #         slug = slugify(self.name)
-    #         self.slug = slug
-    #     super().save(*args, **kwargs)
     @property
     def pdfURL(self):
         try:
@@ -158,5 +148,24 @@ class Course(models.Model):
     class Meta:
         ordering = ['-created']
 
+    def DeleteCourseURL(self):
+        return reverse("dashboard:dashboard-delete-course",
+        kwargs={
+            "departementId": self.module.semester.departement.name,
+            "semesterId":self.module.semester.slug,
+            "moduleId": self.module.slug,
+            "courseName":self.name
+        })
+    def EditCourseURL(self):
+        return reverse("dashboard:dashboard-edit-course",
+        kwargs={
+            "departementId": self.module.semester.departement.name,
+            "semesterId":self.module.semester.slug,
+            "moduleId": self.module.slug,
+            "courseName":self.name
+        })
     def __str__(self):
-        return self.name[:70]
+        return self.name[:50]
+
+
+# 

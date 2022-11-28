@@ -1,0 +1,30 @@
+{% extends 'dashboard/base.html' %} {% load static %}
+{% load humanize %}
+{% block Tilie_block %} Confirmation {% endblock Tilie_block %}
+
+{% block conatnt %}
+
+<h1>Dashboard - Students Details</h1>
+<div class="insights">
+    <div class="confirem__box">
+        <div class="back__section">
+            <a href="{{ backURL }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
+        </div>
+        <h3 class="confirem_message">
+            <strong>Remove : </strong><span>{{ removeName }} </span>
+        </h3>
+        <form action="" method="post">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+    </div>
+</div>
+
+{% endblock conatnt %}
+{% block dashboard_script %}
+<script>
+  
+</script>
+{% endblock dashboard_script %}
+

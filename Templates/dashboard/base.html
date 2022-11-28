@@ -109,6 +109,16 @@
             </button>
           </div>
         </div>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="message__box {% if message.tags == 'success' %} success {% elif message.tags == 'info' %} info {% elif message.tags == 'warning' %} warning {% else %} error {% endif %} ">
+          <p>
+               <strong>{{ message.tags }} : </strong>
+               <span>{{message}}</span>
+          </p>
+       </div>
+       {% endfor %}
+       {% endif %}
         {% block conatnt %}{% endblock conatnt %}
         
       </main>

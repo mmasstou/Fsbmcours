@@ -295,6 +295,61 @@ main .top .right_section .profile{
 .mb-3rem{
    margin-bottom: 3rem !important;
 }
+.insights .confirem__box{
+   width: 86%;
+   background: white;
+   margin-top: 3rem;
+   padding: 1.2rem;
+   border-radius: 12px;
+}
+.insights .message__box {
+   background: transparent;
+   font-size: 21px;
+   font-weight: 400;
+   margin: 1.3rem;
+}
+.insights .message__box.danger{
+   background: transparent;
+}
+.insights .message__box.danger > p span{
+   background: transparent;
+   color: var(--pink);
+}
+.insights .message__box.info{
+   background: transparent;
+}
+.insights .message__box.info > p span{
+   background: transparent;
+
+   color: var(--info);
+}
+.insights .message__box.warning{
+   background: transparent;
+}
+.insights .message__box.warning > p span{
+   background: transparent;
+   color: var(--warning);
+}
+.insights .confirem__box .confirem_message{
+   margin-top: 1rem;
+   padding: 28px;
+}
+.insights .confirem__box  form{
+   display: flex;
+   justify-content: start;
+   align-items: center;
+}
+.insights .confirem__box  form button{
+   width: 20%;
+   background: var(--danger-b) ;
+   color: var(--white);
+   padding: .8em;
+   border-radius: 8px;
+   cursor: pointer;
+}
+.insights .confirem__box  form button:hover{
+   color: var(--pink) ;
+}
 .insights .__table {
    width: 100%;
    display: grid;
@@ -766,7 +821,7 @@ color: #1d1c1c;
    margin-top: var(--padding-1);
 }
 .flex-btn a{
-   padding: 6px;
+   padding: 8px;
 }
 .flex-btn a.primary:hover{
    /* padding: 4px; */

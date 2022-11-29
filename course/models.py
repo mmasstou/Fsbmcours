@@ -67,6 +67,7 @@ class Semester(models.Model):
             "departementId": self.departement.name,
             "semesterId": self.slug
             })
+    
     def getDashboardSemesterViewsURL(self):
         d_qs = Departement.objects.get(
             name = self.departement.name
@@ -76,12 +77,14 @@ class Semester(models.Model):
             "departement":d_qs,
             "semesterId": self.slug
             })
+
     def AddModuleURL(self):
         return reverse("dashboard:dashboard-add-module",
         kwargs={
             "departementId": self.departement.name,
             "semesterId":self.slug
             })
+            
     def __str__(self):
         return self.name
 
@@ -101,8 +104,7 @@ class Module(models.Model):
             slug = slugify(self.name)
             self.slug = slug
         super().save(*args, **kwargs)
-
-
+    
     class Meta:
         ordering = ['-updated','-created',]
 

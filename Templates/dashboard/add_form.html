@@ -1,10 +1,11 @@
 {% extends 'dashboard/base.html' %} {% load static %}
 {% load humanize %}
 {% block Tilie_block %} Students {% endblock Tilie_block %}
-
+{% block pageTitle %}
+<h1 style="margin-bottom: 2rem;" >Dashboard - {{ AddFormTitle }}</h1>
+{% endblock pageTitle %}
 {% block conatnt %}
 
-<h1 style="margin-bottom: 2rem;" >Dashboard - {{ AddFormTitle }}</h1>
 <div class="insights">
     <div class="__form">
         <form action="." method="post" enctype="multipart/form-data">

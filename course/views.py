@@ -4,15 +4,20 @@ from .forms import Adding_courseForm
 # Create your views here.
 
 def moduleDetails(request,departementId, semesterId, moduleSlug):
-    Module_qs = Module.objects.get(slug=moduleSlug)
-    courses_ds = Course.objects.filter(
-        module = Module_qs
-    )
     departement_qs = Departement.objects.get(name = departementId)
     semester_qs = Semester.objects.get(
         departement = departement_qs,
         slug = semesterId
     )
+    Module_qs = Module.objects.get(
+        semester = semester_qs,
+        slug=moduleSlug
+        )
+    courses_ds = Course.objects.filter(
+        module = Module_qs
+    )
+    Module_qs.views += 1
+    Module_qs.save()
     context = {
         "Semesters":semester_qs,
         "course_size":courses_ds.count(),
@@ -30,6 +35,8 @@ def semesterViews(request,departementId, semesterId):
         slug = semesterId
         )
     module_qs = Module.objects.filter(semester = semester_qs)
+    semester_qs.views += 1
+    semester_qs.save()
     context = {
         "Semesters":semester_qs,
         "Modules":module_qs

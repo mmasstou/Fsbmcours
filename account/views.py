@@ -76,7 +76,7 @@ def registerPage(request):
             user = form.save(commit=False)
             fname = user.first_name.lower()
             lname = user.last_name.lower()
-            user.username = fname[:1] + lname[:7] + "_fs"
+            user.username = fname[:1] + lname[:7]
             user.save()
             login(request, user)
 

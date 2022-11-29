@@ -32,7 +32,7 @@ def getFileName(request, filename):
 """
 class Departement(models.Model):
     name = models.TextField(max_length=15)
-    veiw = models.IntegerField(default=0)
+    views = models.IntegerField(default=0)
     count = models.IntegerField(default=0)
 
     class Meta:
@@ -48,7 +48,7 @@ class Semester(models.Model):
     departement = models.ForeignKey(Departement, on_delete=models.SET_NULL, null=True)
     semester_participants = models.ManyToManyField(User, related_name='semester_participants', blank=True)
     numberOfParticipent =  models.IntegerField(default=0)
-    veiw = models.IntegerField(default=0)
+    views = models.IntegerField(default=0)
     count = models.IntegerField(default=0)
     slug = models.SlugField(null=True, blank= True)
 
@@ -87,7 +87,7 @@ class Semester(models.Model):
 
 class Module(models.Model):
     name = models.CharField(max_length=200)
-    veiw = models.IntegerField(default=0)
+    views = models.IntegerField(default=0)
     count = models.IntegerField(default=0)
     semester = models.ForeignKey(Semester, on_delete=models.SET_NULL, null=True)
     ispublic = models.BooleanField(default=False, null=True, blank=True)
@@ -134,7 +134,7 @@ class Course(models.Model):
     name = models.CharField(max_length=200)
     module = models.ForeignKey(Module, on_delete=models.SET_NULL, null=True)
     course_file = models.FileField(upload_to=getFileName) 
-    veiw = models.IntegerField(default=0)
+    views = models.IntegerField(default=0)
     count = models.IntegerField(default=0)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)

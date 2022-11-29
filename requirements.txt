@@ -1,6 +1,7 @@
-altgraph 
+altgraph
 asgiref==3.4.1
 cffi==1.15.0
+coverage==6.5.0
 cryptography==35.0.0
 Django==3.2.8
 django-cors-headers==3.8.0
@@ -8,7 +9,8 @@ future
 gevent==22.8.0
 greenlet==1.1.3
 gsmtpd==0.2
-macholib 
+humanize==4.4.0
+macholib
 mysqlclient==2.1.1
 Pillow==8.4.0
 pycparser==2.20

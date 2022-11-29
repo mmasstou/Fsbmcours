@@ -1,7 +1,10 @@
 {% extends 'dashboard/base.html' %} {% load static %}
 {% block Tilie_block %} {{ Semesters.name }} {% endblock Tilie_block %}
-
+{% block pageTitle %}
+<h1>Dashboard - {{ Semesters.name }} Details</h1>
+{% endblock pageTitle %}
 {% block conatnt %}
+
 <div class="flex-btn mb-3rem">
   <a href="{{ Semesters.AddModuleURL }}" class="primary">
       <i class="fa-solid fa-plus"></i>

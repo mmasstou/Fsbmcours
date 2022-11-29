@@ -129,7 +129,7 @@ def Edit_Course(request, departementId, semesterId, moduleId, courseName):
 
     context = {
         'type':True,
-        'AddFormTitle':"Add Course To " + module_qs.name ,
+        'AddFormTitle':"Edit " + module_qs.name ,
         'Departements_sidbar':Departement.objects.all(),
         'form':form
     }
@@ -160,6 +160,8 @@ def Delete_Course(request, departementId, semesterId, moduleId, courseName):
     if request.method == "POST":
         messages.success(request, f"You have successfully Deleted {course_qs.name}")
         course_qs.delete()
+        module_qs.count -= 1
+        module_qs.save()
         return redirect(
             'dashboard:dashboard-module-views',
             departementId,

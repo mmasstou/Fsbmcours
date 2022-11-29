@@ -1,6 +1,8 @@
 {% extends 'dashboard/base.html' %} {% load static %}
 {% block Tilie_block %}{{ Departements }} {% endblock Tilie_block %}
-
+{% block pageTitle %}
+<h1>Dashboard - {{ Departements }} Details</h1>
+{% endblock pageTitle %}
 {% block conatnt %}
 <div class="flex-btn">
   <a href="./cataguru-details.html" class="primary">

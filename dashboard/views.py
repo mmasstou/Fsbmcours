@@ -84,6 +84,7 @@ def Add_Module(request, departementId, semesterId):
         print("Error : method Is not POST")
 
     context = {
+        'AddFormTitle':"Add Module To " + semester_qs.name ,
         'Departements_sidbar':Departement.objects.all(),
         'form':form
     }
@@ -98,6 +99,7 @@ def StudentsListViews(request):
         return redirect('account:login')
     user_qs = User.objects.all()
     context = {
+        'Departements_sidbar':Departement.objects.all(),
         "Users":user_qs,
     }
     return render(request, "dashboard/students.html", context)

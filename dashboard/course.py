@@ -34,6 +34,7 @@ def DashboardModuleView(request, departementId, semesterId, moduleId):
     }
     return render(request, "dashboard/module_view.html", context)
 
+
 def Add_Course(request, departementId, semesterId, moduleId):
 
     departement_qs = Departement.objects.get(
@@ -111,8 +112,8 @@ def Edit_Course(request, departementId, semesterId, moduleId, courseName):
         form = Aadd_Course_Form(request.POST, request.FILES, instance=course_instance)
         if form.is_valid():
             Course_Q = form.save(commit=False)
-            if course_qs.filter(name = Course_Q.name).count() > 0 :
-                messages.error(request, f"Duplicate {Course_Q.name}")
+            if course_qs.filter(name = Course_Q.name).count() > 0 and (Course_Q.pk != course_qs.get(name = Course_Q.name).pk):
+                messages.error(request, f"Duplicate '{Course_Q.name}'")
             else :
                 Course_Q.save()
                 messages.success(request, f"You have successfully updated {Course_Q.name}")

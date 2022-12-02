@@ -47,9 +47,9 @@ class Semester(models.Model):
     auther = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     departement = models.ForeignKey(Departement, on_delete=models.SET_NULL, null=True)
     semester_participants = models.ManyToManyField(User, related_name='semester_participants', blank=True)
-    numberOfParticipent =  models.IntegerField(default=0)
-    views = models.IntegerField(default=0)
-    count = models.IntegerField(default=0)
+    numberOfParticipent =  models.IntegerField(default=0, null=True, blank= True)
+    views = models.IntegerField(default=0, null=True, blank= True)
+    count = models.IntegerField(default=0, null=True, blank= True)
     slug = models.SlugField(null=True, blank= True)
 
     def save(self, *args, **kwargs):
@@ -77,6 +77,7 @@ class Semester(models.Model):
             "departement":d_qs,
             "semesterId": self.slug
             })
+    
 
     def AddModuleURL(self):
         return reverse("dashboard:dashboard-add-module",
@@ -106,7 +107,7 @@ class Module(models.Model):
         super().save(*args, **kwargs)
     
     class Meta:
-        ordering = ['-updated','-created',]
+        ordering = ['-updated','-created']
 
     def getModuleViewsURL(self):
         return reverse("course:module-details",
@@ -129,6 +130,13 @@ class Module(models.Model):
             "semesterId":self.semester.slug,
             "moduleId": self.slug
             })
+    def DeleteModuleURL(self):
+        return reverse("dashboard:dashboard-delete-module",
+        kwargs={
+            "departementId": self.semester.departement.name,
+            "semesterId":self.semester.slug,
+            "moduleId": self.slug,
+        })
     def __str__(self):
         return self.name
 

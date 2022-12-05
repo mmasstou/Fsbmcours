@@ -107,7 +107,7 @@ class Module(models.Model):
         super().save(*args, **kwargs)
     
     class Meta:
-        ordering = ['-updated','-created']
+        ordering = ['-updated']
 
     def getModuleViewsURL(self):
         return reverse("course:module-details",
@@ -156,7 +156,7 @@ class Course(models.Model):
             url = ''
         return url
     class Meta:
-        ordering = ['-created']
+        ordering = ['-updated']
 
     def DeleteCourseURL(self):
         return reverse("dashboard:dashboard-delete-course",

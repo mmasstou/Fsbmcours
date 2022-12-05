@@ -48,7 +48,7 @@ def DashboardSemester_view(request, departement, semesterId):
         'Departements_sidbar':Departement.objects.all(),
          'Departements':Departement_qs,
         'Semesters':Semester_qs,
-        'Modules': Module_qs.order_by("created")
+        'Modules': Module_qs.order_by("-count", "-views")
     }
     return render(request, "dashboard/semester_view.html", context)
 

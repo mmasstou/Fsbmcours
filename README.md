@@ -33,7 +33,7 @@ $ git clone https://github.com/mmasstou/Fsbmcours.git
 
 
  For database i use Mysql </h2>
-1. After install mysql, Create Databasein mysql shell using these commands
+1. After install mysql, Create Database in mysql shell using these commands
     1. `CREATE DATABASE db_fsbmcours ;`
     2. `CREATE USER fsbmcours_user with PASSWORD 'password' ;`
     3. `GRANT ALL PRIVILEGES ON DATABASE db_fsbmcours TO fsbmcours_user ;`
